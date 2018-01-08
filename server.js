@@ -18,8 +18,7 @@ app.use(express.static(path.join(__dirname, 'dist')));
 // API location
 app.use('/api', api);
 
-app.use('/easyui', express.static('easyui'));
-app.use('/assets', express.static('src/assets'));
+app.use(express.static('public'));
 
 // Send all other requests to the Angular app
 app.get('*', (req, res) => {

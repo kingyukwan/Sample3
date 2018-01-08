@@ -6,7 +6,7 @@ import { AppComponent } from './app.component';
 import { HttpModule } from '@angular/http';
 import { DataService } from './data.service';
 
-import { EasyUIModule } from '../../easyui/components/easyui/easyui.module'
+//import { EasyUIModule } from '../../public/easyui/components/easyui/easyui.module'
 
 @NgModule({
   declarations: [
@@ -14,8 +14,8 @@ import { EasyUIModule } from '../../easyui/components/easyui/easyui.module'
   ],
   imports: [
     BrowserModule,
-    HttpModule,              // <-Add HttpModule
-    EasyUIModule
+    HttpModule              // <-Add HttpModule
+    //,EasyUIModule
   ],
   providers: [DataService], // <-Add DataService
   bootstrap: [AppComponent]

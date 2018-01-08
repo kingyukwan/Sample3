@@ -29,7 +29,7 @@ let response = {
 };
 
 // Get users
-router.get('/users', (req, res) => {
+/*router.get('/users', (req, res) => {
     connection((db) => {
         db.collection('users')
             .find()
@@ -42,7 +42,7 @@ router.get('/users', (req, res) => {
                 sendError(err, res);
             });
     });
-});
+});*/
 
 router.get('/orders', (req, res) => {
     connection((db) => {
