@@ -6,16 +6,13 @@ import { AppComponent } from './app.component';
 import { HttpModule } from '@angular/http';
 import { DataService } from './data.service';
 
-//import { EasyUIModule } from '../../public/easyui/components/easyui/easyui.module'
-
 @NgModule({
   declarations: [
     AppComponent
   ],
   imports: [
     BrowserModule,
-    HttpModule              // <-Add HttpModule
-    //,EasyUIModule
+    HttpModule
   ],
   providers: [DataService], // <-Add DataService
   bootstrap: [AppComponent]

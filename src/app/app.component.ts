@@ -17,7 +17,6 @@ export class AppComponent {
   constructor(private _dataService: DataService) {
     
     // Access the Data Service's getOrders() method we defined
-    this._dataService.getOrders()
-        .subscribe(res => this.orders = res);
+    this._dataService.getOrders().subscribe(res => this.orders = res);
   }
 }

@@ -18,7 +18,7 @@ app.use(express.static(path.join(__dirname, 'dist')));
 // API location
 app.use('/api', api);
 
-app.use(express.static('public'));
+app.use(express.static(path.join(__dirname, 'src')));
 
 // Send all other requests to the Angular app
 app.get('*', (req, res) => {
