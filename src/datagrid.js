@@ -27,9 +27,39 @@ function initDatagrid() {
             {field:'createDate' ,width:130,title:'Create Date',formatter:function(value,row,index){return row.customerDetail.createDate}},
             {field:'updateDate' ,width:130,title:'Update Date',formatter:function(value,row,index){return row.customerDetail.updateDate}}
 		]]
-	})
+    })
+    
+    $('#dg').datagrid('enableFilter', [
+        {
+            field:'status',
+            type:'combobox',
+            options:{
+                panelHeight:'auto',
+                data:[{value:'',text:'All'},{value:'Assist',text:'Assist'},{value:'Completed',text:'Completed'}
+                    ,{value:'Dispatched',text:'Dispatched'},{value:'Pending',text:'Pending'}],
+                onChange:function(value){
+                    if (value == ''){
+                        $('#dg').datagrid('removeFilterRule', 'status');
+                    } else {
+                        $('#dg').datagrid('addFilterRule', {
+                            field: 'status',
+                            op: 'equal',
+                            value: value
+                        });
+                    }
+                    $('#dg').datagrid('doFilter');
+                }
+            }
+        }
+    ]);
+
+    var row = $('#dg').datagrid('getSelected');
+    if(row) {
+        alert('Selected Order: ' + row.orderNumber + '\nCustomer: ' + row.customerNumber);
+    }
+
 }
 	
-	$(function () {
-		initDatagrid();
-	});
+$(function () {
+	initDatagrid();
+});
